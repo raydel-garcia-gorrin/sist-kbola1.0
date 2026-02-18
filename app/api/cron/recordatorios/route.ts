@@ -1,10 +1,10 @@
 // app/api/cron/recordatorios/route.ts
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 export async function GET(req: Request) {
   try {
-    const supabase = createClient()
+    const supabase = createServerSupabaseClient()
     
     // Verificar autenticación del cron (puedes usar una API key)
     const authHeader = req.headers.get('authorization')
